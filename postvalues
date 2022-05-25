@@ -1,0 +1,17 @@
+{
+    "studentId": "190104090",
+    "firstName": "Ulan",
+    "lastName": "Sydygaliev",
+    "email": "ulan.sydygaliev@iaau.edu.kg",
+    "occupation": "student",
+    "imageUrl": "https://i.imgur.com/MZiSVLS.jpeg"
+}
+
+{
+    "studentId": "190104009",
+    "firstName": "Nazim",
+    "lastName": "Makhmuthodzhaev",
+    "email": "nazim.makhmuthodzhaev@iaau.edu.kg",
+    "occupation": "student",
+    "imageUrl":"https://i.ytimg.com/vi/_nJM3P8msJc/maxresdefault.jpg"
+}
