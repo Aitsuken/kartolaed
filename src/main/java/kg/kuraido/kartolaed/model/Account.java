@@ -20,6 +20,7 @@ public class Account implements Serializable {
     private String firstName;
     private String lastName;
     private String email;
+    private String password;
     private String occupation;
     private String imageUrl;
 
