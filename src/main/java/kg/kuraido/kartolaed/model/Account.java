@@ -4,6 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.UUID;
 
 
 @Entity
@@ -13,15 +15,16 @@ import java.io.Serializable;
 public class Account implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false,  updatable = false)
-    private Long id;
-    private String studentId;
+    private UUID id;
+    private String internalId;
     private String firstName;
     private String lastName;
     private String email;
-    private String password;
+    //private String password;
     private String occupation;
     private String imageUrl;
+    @Column(nullable=false, columnDefinition = "BOOLEAN DEFAULT FALSE")
+    private boolean active;
+    private Timestamp dateCreated;
 
 }

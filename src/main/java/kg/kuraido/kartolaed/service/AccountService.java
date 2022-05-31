@@ -6,7 +6,10 @@ import kg.kuraido.kartolaed.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class AccountService {
@@ -18,6 +21,9 @@ public class AccountService {
     }
 
     public Account addAccount(Account account){
+        account.setId(UUID.randomUUID());
+        account.setActive(true);
+        account.setDateCreated(new Timestamp(new Date().getTime()));
         return accountRepository.save(account);
     }
 
@@ -29,11 +35,11 @@ public class AccountService {
         return accountRepository.save(account);
     }
 
-    public Account findAccountById(Long id){
+    public Account findAccountById(UUID id){
         return accountRepository.findAccountById(id)
                 .orElseThrow(() -> new AccountNotFoundException("User was not found with id " + id));
     }
-    public void deleteAccount(Long id){
+    public void deleteAccount(UUID id){
          accountRepository.deleteAccountById(id);
     }
 }
